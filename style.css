@@ -12,6 +12,22 @@ body {
 }
 
 /* =========================
+   BESSERE LESBARKEIT
+========================= */
+
+section p,
+section li {
+  font-weight: 500;   /* macht alles etwas fetter */
+}
+
+/* Standort extra hervorheben */
+.standort {
+  font-weight: 800;
+  font-size: 18px;
+  color: #111;
+}
+
+/* =========================
    NAV
 ========================= */
 
@@ -38,7 +54,7 @@ section {
   margin: 20px auto;
   padding: 25px;
   border-radius: 10px;
-  color: #333;
+  color: #222;
 }
 
 /* =========================
@@ -142,7 +158,7 @@ header.teile {
 
 body.dark {
   background: #121212;
-  color: #e6e6e6;
+  color: #f1f1f1;
 }
 
 body.dark section {
@@ -156,6 +172,10 @@ body.dark nav {
 
 body.dark a {
   color: #e6e6e6;
+}
+
+body.dark .standort {
+  color: #ffffff;
 }
 
 body.dark a.button,
