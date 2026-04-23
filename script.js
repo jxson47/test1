@@ -25,16 +25,22 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-  // Back Button erstellen
-  const backBtn = document.createElement("div");
-  backBtn.className = "back-box";
-  backBtn.innerHTML = "⬅ Zurück";
+  // merkt sich Besuch + zeigt Back Button nur wenn Navigation passiert ist
+  const cameFromPage = sessionStorage.getItem("visited");
 
-  backBtn.onclick = function () {
-    history.back();
-  };
+  if (cameFromPage) {
+    const backBtn = document.createElement("div");
+    backBtn.className = "back-box";
+    backBtn.innerHTML = "⬅ Zurück";
 
-  document.body.appendChild(backBtn);
+    backBtn.onclick = function () {
+      history.back();
+    };
+
+    document.body.appendChild(backBtn);
+  }
+
+  sessionStorage.setItem("visited", "true");
 
 });
 
