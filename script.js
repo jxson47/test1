@@ -1,3 +1,4 @@
+
 function toggleDark() {
   document.body.classList.toggle("dark");
 
@@ -10,12 +11,16 @@ function toggleDark() {
 
 document.addEventListener("DOMContentLoaded", function () {
 
-  // Darkmode laden
+  // =========================
+  // DARKMODE
+  // =========================
   if (localStorage.getItem("darkmode") === "on") {
     document.body.classList.add("dark");
   }
 
-  // Navigation laden
+  // =========================
+  // NAVIGATION LADEN
+  // =========================
   fetch("nav.html")
     .then(res => res.text())
     .then(data => {
@@ -25,16 +30,15 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-  // 🔥 STARTSEITE ERKENNEN
+  // =========================
+  // BACK BUTTON (AUTO)
+  // =========================
   const isHome =
-    window.location.pathname.endsWith("index.html") ||
-    window.location.pathname === "/" ||
-    window.location.pathname === "/index.html";
+    location.pathname.endsWith("index.html") ||
+    location.pathname === "/" ||
+    location.pathname.endsWith("/");
 
-  const cameFromPage = sessionStorage.getItem("visited");
-
-  // 👉 Back Button nur wenn NICHT Startseite
-  if (!isHome && cameFromPage === "true") {
+  if (!isHome && history.length > 1) {
     const backBtn = document.createElement("div");
     backBtn.className = "back-box";
     backBtn.innerHTML = "⬅ Zurück";
@@ -46,14 +50,11 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.appendChild(backBtn);
   }
 
-  // 👉 visited NUR setzen wenn NICHT Startseite
-  if (!isHome) {
-    sessionStorage.setItem("visited", "true");
-  }
-
 });
 
-// Admin Login
+// =========================
+// ADMIN LOGIN
+// =========================
 function openAdmin() {
   let pw = prompt("🔐 Admin Passwort eingeben:");
 
