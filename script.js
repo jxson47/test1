@@ -9,6 +9,7 @@ function toggleDark() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+
   // Darkmode laden
   if (localStorage.getItem("darkmode") === "on") {
     document.body.classList.add("dark");
@@ -23,6 +24,18 @@ document.addEventListener("DOMContentLoaded", function () {
         nav.innerHTML = data;
       }
     });
+
+  // Back Button erstellen
+  const backBtn = document.createElement("div");
+  backBtn.className = "back-box";
+  backBtn.innerHTML = "⬅ Zurück";
+
+  backBtn.onclick = function () {
+    history.back();
+  };
+
+  document.body.appendChild(backBtn);
+
 });
 
 // Admin Login
