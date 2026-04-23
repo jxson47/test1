@@ -96,7 +96,7 @@ a.button:hover,
 
 .back-box {
   position: fixed;
-  top: 20px;
+  top: 70px;   /* vorher 20px → jetzt weiter runter */
   left: 20px;
 
   background: white;
@@ -110,6 +110,7 @@ a.button:hover,
 
   transition: 0.2s ease;
   z-index: 9999;
+}
 }
 
 .back-box:hover {
