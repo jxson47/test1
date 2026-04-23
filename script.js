@@ -9,11 +9,23 @@ function toggleDark() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+  // Darkmode laden
   if (localStorage.getItem("darkmode") === "on") {
     document.body.classList.add("dark");
   }
+
+  // Navigation laden
+  fetch("nav.html")
+    .then(res => res.text())
+    .then(data => {
+      let nav = document.getElementById("nav");
+      if (nav) {
+        nav.innerHTML = data;
+      }
+    });
 });
 
+// Admin Login
 function openAdmin() {
   let pw = prompt("🔐 Admin Passwort eingeben:");
 
