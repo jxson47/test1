@@ -25,10 +25,16 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-  // merkt sich Besuch + zeigt Back Button nur wenn Navigation passiert ist
+  // 🔥 STARTSEITE ERKENNEN
+  const isHome =
+    window.location.pathname.endsWith("index.html") ||
+    window.location.pathname === "/" ||
+    window.location.pathname === "/index.html";
+
   const cameFromPage = sessionStorage.getItem("visited");
 
-  if (cameFromPage) {
+  // 👉 Back Button nur wenn NICHT Startseite
+  if (!isHome && cameFromPage === "true") {
     const backBtn = document.createElement("div");
     backBtn.className = "back-box";
     backBtn.innerHTML = "⬅ Zurück";
@@ -40,7 +46,10 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.appendChild(backBtn);
   }
 
-  sessionStorage.setItem("visited", "true");
+  // 👉 visited NUR setzen wenn NICHT Startseite
+  if (!isHome) {
+    sessionStorage.setItem("visited", "true");
+  }
 
 });
 
