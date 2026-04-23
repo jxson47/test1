@@ -1,48 +1,20 @@
+/* =========================
+   BASIS
+========================= */
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   background: #f5f5f5;
-  color: #000;
-  transition: 0.3s;
+  color: #333;
+  transition: 0.3s ease;
+  line-height: 1.6;
 }
 
-/* ===== HEADER / BANNER ===== */
-header.banner {
-  position: relative;
-  color: white;
-  text-align: center;
-  padding: 80px 20px;
-  background-size: cover;
-  background-position: center;
-  overflow: hidden;
-}
+/* =========================
+   NAV
+========================= */
 
-/* Overlay */
-header.banner::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.5);
-  z-index: 0;
-}
-
-header.banner h1,
-header.banner p,
-header.banner div {
-  position: relative;
-  z-index: 1;
-}
-
-/* ===== BANNER BILDER ===== */
-header.index { background-image: url("index.jpg"); }
-header.preise { background-image: url("preise.jpg"); }
-header.hinweise { background-image: url("hinweise.jpg"); }
-header.about { background-image: url("about.jpg"); }
-header.kontakt { background-image: url("kontakt.jpg"); }
-header.roller { background-image: url("roller.jpg"); }
-header.teile { background-image: url("teile.jpg"); }
-
-/* ===== NAV ===== */
 nav {
   background: #444;
   text-align: center;
@@ -56,33 +28,126 @@ nav a {
   font-weight: bold;
 }
 
-/* ===== SECTION ===== */
+/* =========================
+   SECTION
+========================= */
+
 section {
   background: white;
   max-width: 900px;
   margin: 20px auto;
   padding: 25px;
-  border-radius: 8px;
+  border-radius: 10px;
+  color: #333;
 }
 
-/* LISTEN */
+/* =========================
+   LISTEN
+========================= */
+
 section ul {
   padding-left: 18px;
 }
 
 section ul li {
-  margin-bottom: 14px;
-  line-height: 1.7;
+  margin-bottom: 12px;
 }
 
-/* ===== DARK MODE ===== */
+/* =========================
+   BUTTONS
+========================= */
+
+a.button, .shop {
+  display: inline-block;
+  margin: 10px 0;
+  padding: 12px 16px;
+  background: #222;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+a.button:hover,
+.shop:hover {
+  background: #000;
+}
+
+/* =========================
+   BANNER SYSTEM
+========================= */
+
+header.banner {
+  position: relative;
+  color: white;
+  text-align: center;
+  padding: 90px 20px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+/* dunkles Overlay */
+header.banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+
+/* Text bleibt sichtbar */
+header.banner h1,
+header.banner p,
+header.banner div {
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================
+   BANNER BILDER
+========================= */
+
+header.index {
+  background-image: url("index.jpg");
+}
+
+header.preise {
+  background-image: url("preise.jpg");
+}
+
+header.hinweise {
+  background-image: url("hinweise.jpg");
+}
+
+header.about {
+  background-image: url("about.jpg");
+}
+
+header.kontakt {
+  background-image: url("kontakt.jpg");
+}
+
+header.roller {
+  background-image: url("roller.jpg");
+}
+
+header.teile {
+  background-image: url("teile.jpg");
+}
+
+/* =========================
+   DARK MODE
+========================= */
+
 body.dark {
   background: #121212;
-  color: white;
+  color: #e6e6e6;
 }
 
 body.dark section {
   background: #1e1e1e;
+  color: #e6e6e6;
 }
 
 body.dark nav {
@@ -90,9 +155,10 @@ body.dark nav {
 }
 
 body.dark a {
-  color: #ddd;
+  color: #e6e6e6;
 }
 
-body.dark header.banner::before {
-  background: rgba(0,0,0,0.6);
+body.dark a.button,
+body.dark .shop {
+  background: #333;
 }

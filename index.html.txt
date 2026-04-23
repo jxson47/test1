@@ -13,7 +13,7 @@
 <button class="toggle" onclick="toggleDark()">🌙</button>
 
 <header class="banner index">
-  <h1>🛵 Roller-Service</h1>
+  <h1>🛵 Roller-Service & Reparaturen</h1>
   <p>Reparatur • Tuning • Wartung</p>
 </header>
 
@@ -28,7 +28,21 @@
 </nav>
 
 <section>
+
 <p><b>Alles rund um deinen Roller – schnell & zuverlässig.</b></p>
+
+<p>🔧 Motor • Ansaugung • Bremsen • Elektrik</p>
+
+<p>🛒 Teile auf Wunsch: Scooter-Attack • Roller.com • Zweiradteile.net</p>
+
+<p>📍 Standort: 47533 Kleve</p>
+
+<p>📍 Arbeit in meiner Garage – sicher & sauber</p>
+
+<p>💬 Kontakt über WhatsApp, Instagram oder E-Mail</p>
+
+<a class="button" href="kontakt.html">👉 Jetzt Kontakt aufnehmen</a>
+
 </section>
 
 <script src="script.js"></script>
