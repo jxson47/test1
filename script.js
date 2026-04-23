@@ -1,4 +1,3 @@
-
 function toggleDark() {
   document.body.classList.toggle("dark");
 
@@ -24,21 +23,19 @@ document.addEventListener("DOMContentLoaded", function () {
   fetch("nav.html")
     .then(res => res.text())
     .then(data => {
-      let nav = document.getElementById("nav");
-      if (nav) {
-        nav.innerHTML = data;
-      }
+      const nav = document.getElementById("nav");
+      if (nav) nav.innerHTML = data;
     });
 
   // =========================
-  // BACK BUTTON (AUTO)
+  // BACK BUTTON (FIXED)
   // =========================
-  const isHome =
-    location.pathname.endsWith("index.html") ||
-    location.pathname === "/" ||
-    location.pathname.endsWith("/");
 
-  if (!isHome && history.length > 1) {
+  // Dateiname ermitteln (wichtig für GitHub Pages!)
+  const page = location.pathname.split("/").pop();
+
+  // nur anzeigen wenn NICHT index.html
+  if (page && page !== "index.html") {
     const backBtn = document.createElement("div");
     backBtn.className = "back-box";
     backBtn.innerHTML = "⬅ Zurück";
@@ -51,6 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 });
+
 
 // =========================
 // ADMIN LOGIN
